@@ -1,0 +1,7 @@
+name: Socialize
+description: 'Socialize OctoberCMS theme.'
+author: Ricardo Lüders
+homepage: 'http://octobercms.com'
+code: ''
+
+form: config/fields.yaml

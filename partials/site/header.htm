@@ -1,0 +1,44 @@
+==
+<!-- Nav -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Socialize</a>
+            <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="headerNavbar">
+
+            <ul class="navbar-nav navbar-nav-icons me-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-2 {% if this.page.id == 'home' %}active{% endif %}">
+                    <a class="nav-link" aria-current="page" href="{{ 'home'|page }}">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="nav-item mx-2 {% if this.page.id == 'friends' %}active{% endif %}">
+                    <a class="nav-link" href="{{ 'friends'|page }}">
+                        <i class="fas fa-user-friends"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if user %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ user.name }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                        <li><a class="dropdown-item" href="{{ 'account'|page }}">My account</a></li>
+                        <li><a class="dropdown-item" href="#" data-request="onLogout">Logout</a></li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="nav-item"><a href="/register">Register</a></li>
+                <li class="nav-item"><a href="/login">Login</a></li>
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+</nav>

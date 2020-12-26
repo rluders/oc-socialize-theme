@@ -1,0 +1,9 @@
+// Bootstrap
+@import "../vendor/bootstrap/css/bootstrap-grid.css";
+@import "../vendor/bootstrap/css/bootstrap.css";
+
+// FontAwesome
+$fa-font-path: "../vendor/fontawesome/webfonts";
+@import "../vendor/fontawesome/scss/fontawesome.scss";
+@import "../vendor/fontawesome/scss/solid.scss";
+@import "../vendor/fontawesome/scss/brands.scss";
