@@ -1,0 +1,16 @@
+title = "Explore"
+url = "/explore"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "login"
+
+[userList]
+maxItems = 16
+profilePage = "profile"
+==
+<div class="container">
+    {% component 'userList' %}
+</div>

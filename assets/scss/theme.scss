@@ -1,5 +1,9 @@
 #headerNavbar {
     .navbar-nav-icons {
+        .nav-item i {
+            font-size: 24px;
+        }
+
         .nav-item.active {
             i {
                 color: #db6a26;
