@@ -13,7 +13,8 @@ security = "all"
         {% for friend in friends %}
         <div class="col">
             <div class="card h-100">
-                <img src="..." class="card-img-top" alt="{{ friend.name }} picture">
+
+                <img src="{{ friend.avatar.getThumb(354, 354, { mode : 'crop' }) }}" class="card-img-top" alt="{{ friend.name }} picture">
                 <div class="card-body">
                     <h5 class="card-title">
                         <a href="{{ 'profile'|page({user: friend.username}) }}">{{ friend.name }}</a>
