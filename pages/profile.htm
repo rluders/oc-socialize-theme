@@ -7,42 +7,13 @@ is_hidden = 0
 userSlug = "username"
 userPageTitle = "{{ user.name }}'s Profile"
 
-[userFriendship]
-
 [session]
 security = "all"
 ==
 <div class="container">
-
     <div class="row">
-
         <div class="col-12">
-            {% if socialize.user %}
-
-            {% component 'avatar' %}
-
-            <h1>{{ socialize.user.name }}'s Profile</h1>
-            <div class="p-2 mb-4">
-                {% component 'userFriendship' %}
-            </div>
-
-            <p><strong>Username:</strong> {{ socialize.user.username }}</p>
-            <p><strong>Firstname:</strong> {{ socialize.user.name }}</p>
-            <p><strong>Surname:</strong> {{ socialize.user.surname }}</p>
-            <p><strong>E-mail:</strong> {{ socialize.user.email }}</p>
-
-            <h2>User dump</h2>
-            <code>
-            {{ socialize.user }}
-            </code>
-
-            {% else %}
-
-            <h1>User not found</h1>
-
-            {% endif %}
-
+            {% component 'userProfile' %}
         </div>
     </div>
-
 </div>
