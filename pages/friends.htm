@@ -8,21 +8,28 @@ security = "user"
 redirect = "login"
 ==
 <div class="container">
-    {% set friends = user.getFriends() %}
-    {% if friends %}
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for friend in friends %}
-        <div class="col">
-            <div class="card h-100">
-                <img src="{{ friend.avatar.getThumb(354, 354, { mode : 'crop' }) }}" class="card-img-top" alt="{{ friend.name }} picture">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="{{ 'profile'|page({user: friend.username}) }}">{{ friend.name }}</a>
-                    </h5>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-3">
+            {% partial 'sidebar' %}
         </div>
-        {% endfor %}
+        <div class="col-9">
+            {% set friends = user.getFriends() %}
+            {% if friends %}
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for friend in friends %}
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{ friend.avatar.getThumb(354, 354, { mode : 'crop' }) }}" class="card-img-top" alt="{{ friend.name }} picture">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ 'profile'|page({user: friend.username}) }}">{{ friend.name }}</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
     </div>
-    {% endif %}
 </div>

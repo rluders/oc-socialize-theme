@@ -7,12 +7,18 @@ is_hidden = 0
 security = "user"
 redirect = "login"
 ==
-<div class="container">
-    {% for i in 0..10 %}
-    <div class="card mb-3">
-        <div class="card-body">
-            This is some text within a card body.
-        </div>
+<div class="row">
+    <div class="col-3">
+        {% partial 'sidebar' %}
     </div>
-    {% endfor %}
+
+    <div class="col-9">
+        {% for i in 0..10 %}
+        <div class="card mb-3">
+            <div class="card-body">
+                This is some text within a card body.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>

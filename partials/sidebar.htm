@@ -1,0 +1,26 @@
+<aside id="user-sidebar">
+    <div class="card">
+        <div class="card-body user-info">
+            <div class="user-avatar text-center">
+                <img src="{{ user.avatar.getThumb(128, 128, { mode : 'crop' } )}}" class="rounded-circle" alt="{{ user.name }} avatar" />
+            </div>
+            <h5 class="text-center pt-4">{{ user.name }}</h5>
+        </div>
+        <div class="card-body px-0">
+            <ul class="nav flex-column">
+                <li class="nav-item {% if this.page.id == 'home' %}active{% endif %}">
+                    <a class="nav-link active" aria-current="page" href="{{ 'home'|page }}">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item {% if this.page.id == 'friends' %}active{% endif %}">
+                    <a class="nav-link" href="{{ 'friends'|page }}">
+                        <i class="fas fa-user-friends"></i>
+                        Friends
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>

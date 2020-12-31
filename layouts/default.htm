@@ -15,22 +15,17 @@ description = "Default layout"
         <link href="{{ ['assets/scss/theme.scss']|theme }}" rel="stylesheet">
         {% styles %}
     </head>
-    <body>
+    <body class="d-flex flex-column h-100">
 
         <!-- Header -->
-        <header id="layout-header">
-            {% partial 'site/header' %}
-        </header>
+        {% partial 'site/header' %}
 
         <!-- Content -->
-        <section id="layout-content">
-            {% page %}
-        </section>
-
-        <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial 'site/footer' %}
-        </footer>
+        <main class="flex-shrink-0">
+            <div class="container">
+                {% page %}
+            </div>
+        </main>
 
         <!-- Scripts -->
         <script src="{{ [
